@@ -11,11 +11,13 @@ import java.util.List;
 @Component
 public class ServiceCarImpl implements ServiceCar {
     @Autowired
-    private  CarDaoImpl dao;
+    private CarDaoImpl dao;
 
 
-   @Override
+    @Override
     public List<Car> getCar(int count) {
-        return dao.getCar(count);
+        count = (count > 5 || count < 0) ? 5 : count;
+        return dao.getCar().subList(0, count);
     }
 }
+
