@@ -15,9 +15,9 @@ public class ServiceCarImpl implements ServiceCar {
 
 
     @Override
-    public List<Car> getCar(int count) {
+    public List<Car> getCarByCount(int count) {
         List<Car> listcar = dao.getCar();
-        count = (count > listcar.size() || count < 0) ? listcar.size() : count;
+        count = (count >= listcar.size() || count < 0) ? listcar.size() : count;
         return listcar.subList(0, count);
     }
 }
