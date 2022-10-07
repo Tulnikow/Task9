@@ -8,9 +8,9 @@ import java.util.List;
 
 @Component
 public class CarDaoImpl implements Cardao {
-    private static List<Car> cars;
+    private static final List<Car> cars;
 
-    {
+    static {
         cars = new ArrayList<>();
         cars.add(new Car("BMW", 3, "Black"));
         cars.add(new Car("Audi", 123, "White"));
